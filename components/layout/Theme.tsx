@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { createTheme, ThemeProvider, Theme } from "@mui/material/styles";
@@ -16,8 +16,8 @@ type ThemeContextProps = {
 
 export const ThemeContext = createContext<ThemeContextProps>({
     isDarkTheme: true,
-    setIsDarkTheme: () => { },
-    toggleTheme: () => { },
+    setIsDarkTheme: () => {},
+    toggleTheme: () => {},
     theme: createTheme(),
 });
 
@@ -43,18 +43,18 @@ const ThemeProviderComponent: React.FC<ThemeProps> = ({ children }) => {
         palette: {
             mode: isDarkTheme ? "dark" : "light",
             primary: {
-                main: '#902bf5',
+                main: "#902bf5",
             },
             secondary: {
-                main: '#FFFFFF',
+                main: "#FFFFFF",
             },
             background: {
-                default: isDarkTheme ? '#202124' : '#f5f5f5',
-                paper: isDarkTheme ? '#202124' : '#fff',
+                default: isDarkTheme ? "#202124" : "#f5f5f5",
+                paper: isDarkTheme ? "#202124" : "#fff",
             },
             text: {
-                primary: isDarkTheme ? '#D9DBDE' : '#000',
-                secondary: isDarkTheme ? '#bdbdbd' : '#616161',
+                primary: isDarkTheme ? "#D9DBDE" : "#000",
+                secondary: isDarkTheme ? "#bdbdbd" : "#616161",
             },
         },
     });
