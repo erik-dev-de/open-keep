@@ -12,14 +12,17 @@ type NoteCardProps = {
         note_id: number;
         user_id: number;
     };
-
+    className?: string;
     onCardCheck: (id: number) => void;
 };
 
-const NoteCard: React.FC<NoteCardProps> = ({ note, onCardCheck }) => {
+const NoteCard: React.FC<NoteCardProps> = ({
+    note,
+    onCardCheck,
+    className,
+}) => {
     const [isHovered, setIsHovered] = useState(false);
     const checkedNotes = useSelector((state: RootState) => state.checkedNotes);
-
     const { theme, isDarkTheme } = useContext(ThemeContext);
 
     return (
@@ -67,12 +70,12 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onCardCheck }) => {
                         <CheckCircleIcon />
                     </Box>
                 </Fade>
-                <Typography variant="h6" sx={{ wordBreak: "break-all" }}>
+                <Typography variant="h6" sx={{ wordBreak: "break-word" }}>
                     {note.title}
                 </Typography>
                 <Typography
                     className="mt-2 text-sm"
-                    sx={{ wordBreak: "break-all" }}
+                    sx={{ wordBreak: "break-word" }}
                 >
                     {note.content}
                 </Typography>
